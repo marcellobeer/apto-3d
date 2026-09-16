@@ -33,7 +33,8 @@ body{background:var(--stage);color:var(--ink);font-family:"Barlow",system-ui,san
 .decor-pill{padding:5px 6px 5px 12px;}
 .decor-name{font-size:.86rem;}
 [data-tip]{position:relative;}
-[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(20,22,24,.94);color:#fff;font:500 .74rem/1.2 "Barlow",system-ui,sans-serif;padding:6px 9px;border-radius:7px;white-space:nowrap;pointer-events:none;z-index:6;}
+[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(20,22,24,.94);color:#fff;font:500 .74rem/1.2 "Barlow",system-ui,sans-serif;padding:6px 9px;border-radius:7px;white-space:nowrap;pointer-events:none;z-index:6;}
+@media (hover:hover){ [data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(20,22,24,.94);color:#fff;font:500 .74rem/1.2 "Barlow",system-ui,sans-serif;padding:6px 9px;border-radius:7px;white-space:nowrap;pointer-events:none;z-index:6;} }
 .bar{display:flex;align-items:center;gap:2px;flex-wrap:nowrap;max-width:calc(100vw - 32px);overflow-x:auto;scrollbar-width:none;background:var(--panel);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 6px 24px rgba(0,0,0,.12);}
 .view-pill{display:flex;align-items:center;gap:7px;padding:6px 10px 6px 12px;}
 .view-pill .k{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
@@ -47,7 +48,7 @@ body{background:var(--stage);color:var(--ink);font-family:"Barlow",system-ui,san
 .menu button{text-align:left;border-radius:9px;padding:8px 10px;font-size:.85rem;}
 .menu button[aria-checked="true"]{background:var(--accent);color:var(--accent-ink);}
 button{font-family:"Barlow",system-ui,sans-serif;font-size:.86rem;font-weight:500;color:var(--ink);background:transparent;border:0;border-radius:999px;padding:7px 12px;cursor:pointer;transition:background .15s;}
-button:hover{background:var(--line);}
+@media (hover:hover){ button:hover{background:var(--line);} }
 button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:transparent;}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .sep{width:1px;background:var(--line);margin:6px 4px;}
@@ -70,7 +71,7 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .decor-k{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
 .decor-name{font-weight:600;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .decor-step{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:999px;color:var(--muted);}
-.decor-step:hover{background:var(--line);color:var(--ink);}
+@media (hover:hover){ .decor-step:hover{background:var(--line);color:var(--ink);} }
 .decor-list{width:min(300px,calc(100vw - 32px));background:var(--panel);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.16);padding:6px;display:flex;flex-direction:column;gap:2px;}
 .decor-opt{display:grid;grid-template-columns:22px 1fr;align-items:start;gap:2px 8px;text-align:left;border-radius:10px;padding:9px 10px;}
 .decor-opt .n{font-weight:600;font-size:.9rem;}
@@ -85,19 +86,19 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .saves-head span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
 .saves-head button{border:1px solid var(--line);font-size:.78rem;padding:4px 10px;}
 .save-row{display:flex;align-items:center;gap:4px;border-radius:9px;padding:5px 6px;}
-.save-row:hover{background:var(--line);}
+@media (hover:hover){ .save-row:hover{background:var(--line);} }
 .save-row .nm{flex:1;min-width:0;text-align:left;}
 .save-row .nm b{display:block;font-size:.86rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .save-row .nm small{color:var(--muted);font-size:.74rem;}
 .save-row .mini{width:26px;height:26px;display:grid;place-items:center;padding:0;border-radius:8px;font-size:.85rem;color:var(--muted);}
-.save-row .mini:hover{background:var(--btn);color:var(--ink);}
+@media (hover:hover){ .save-row .mini:hover{background:var(--btn);color:var(--ink);} }
 .save-empty{font-size:.78rem;color:var(--muted);padding:2px 6px 4px;}
 .decor-acts{display:flex;gap:6px;padding:6px 4px 2px;}
 .decor-acts button{flex:1;border:1px solid var(--line);font-size:.8rem;}
 .decor-foot{font-size:.74rem;color:var(--muted);padding:6px 10px 4px;border-top:1px solid var(--line);margin-top:4px;}
 .tag.sel{font:600 12px/1 "Barlow",system-ui,sans-serif;color:#fff;background:rgba(176,92,32,.94);padding:5px 10px;box-shadow:0 2px 10px rgba(0,0,0,.2);}
 .props{position:absolute;top:16px;right:16px;z-index:2;width:min(290px,calc(100vw - 32px));max-height:calc(100vh - 150px);overflow:auto;background:var(--panel);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.16);padding:10px 12px 12px;display:flex;flex-direction:column;gap:10px;}
-.props h2{margin:0;font:600 1rem/1.2 "Barlow",system-ui,sans-serif;}
+
 .props-head{display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .props-head .icon{width:26px;height:26px;}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
@@ -134,15 +135,112 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .help .close{position:absolute;top:8px;right:10px;}
 .loading{position:absolute;inset:0;display:grid;place-items:center;font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:1.2rem;letter-spacing:.06em;color:var(--muted);pointer-events:none;}
 .err{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;}
-@media (max-width:760px){
-  .props{left:8px;right:8px;top:auto;bottom:76px;width:auto;max-height:52vh;padding-bottom:16px;}
-  .decor{max-width:calc(100% - 16px);left:8px;top:8px;}
-  .decor-name{max-width:40vw;}
-  .bar{padding:3px;}
-  .view-pill .k{display:none;}
-  .icon{width:38px;height:38px;}
-  .pad{bottom:150px;}
+/* ---------- base: pieces that only exist on phones ---------- */
+html,body{margin:0}
+:root{--danger:#b3261e}
+.lbl,#t-mais,#p-rot90,#p-undo,.grip,#sel-dims,.seg,.optrow.m-only,.sel-name{display:none}
+.sel-h{margin:0;flex:1;min-width:0;font:inherit}
+.props .desk-name{font:600 1rem/1.2 "Barlow",system-ui,sans-serif;display:block}
+.help{max-height:calc(100dvh - 100px);overflow:auto}
+#p-del{color:var(--danger)}
+.sheet-body{display:flex;flex-direction:column;gap:10px}
+.tab{display:contents}
+.help .help-touch{display:none}
+@media (pointer:coarse){ .help .help-touch{display:grid} .help .help-desk{display:none} }
+.pad{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#app{-webkit-tap-highlight-color:transparent}
+.toast.act{pointer-events:auto;display:flex;align-items:center;gap:10px}
+.toast.act button{min-height:36px;font-weight:600;border:1px solid var(--line)}
+@supports (height:100dvh){ html,body{height:100dvh} }
+
+@media (max-width:760px), (pointer:coarse) and (max-height:500px){
+  .toast{z-index:6}
+  /* topo: so o nome da versao */
+  .decor{top:calc(8px + env(safe-area-inset-top,0px));left:calc(8px + env(safe-area-inset-left,0px));max-width:calc(100% - 16px)}
+  .decor-pill{height:40px;box-sizing:border-box;padding:0 14px}
+  .decor-k,.decor-step{display:none}
+  .decor-name{max-width:60vw}
+  .decor-state{display:none!important}
+  .decor-list{max-height:calc(100dvh - 144px);overflow:auto;overscroll-behavior:contain}
+  .save-row .mini,.saves-head button{min-width:44px;min-height:44px}
+  .decor-acts button{min-height:44px}
+  /* barra de baixo: 5 alvos com rotulo */
+  .dock{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));transform:none;width:auto;max-width:none}
+  .bar{max-width:none;overflow:visible;justify-content:space-between;gap:2px;padding:4px;border-radius:18px;height:56px;box-sizing:border-box}
+  #view-prev,#view-next,.bar .sep{display:none}
+  .bar .view-pill{flex:1 1 auto;min-width:0;max-width:150px;height:48px;border-radius:12px;padding:0 10px}
+  .view-pill .k{display:none}
+  .view-pill .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar .view-pill .caret{flex:none}
+  .bar .icon,.bar .edit-pill,.more .icon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0;border-radius:12px}
+  .bar .icon,.bar .edit-pill{width:52px;height:48px;flex:0 0 auto}
+  #t-mais{display:flex}
+  .bar .lbl,.bar .lbl-e,.more .lbl{display:block;font-size:.66rem;line-height:1;white-space:nowrap}
+  .bar .icon svg,.bar .edit-pill svg,.more .icon svg{width:20px;height:20px}
+  .menu.more,#view-list{left:0;right:0;transform:none;width:auto}
+  .menu.more{grid-template-columns:repeat(4,1fr);gap:4px;padding:6px}
+  .menu.more .icon{width:auto;height:64px;gap:6px}
+  #view-list{max-height:calc(100dvh - 140px);overflow:auto}
+  .menu button{min-height:44px}
+  /* aviso no topo */
+  .toast{top:calc(56px + env(safe-area-inset-top,0px));bottom:auto;left:8px;right:8px;margin:0 auto;width:fit-content;max-width:calc(100% - 16px);box-sizing:border-box;transform:none;border-radius:12px;font-size:.8rem;line-height:1.3}
+  body.has-sel .toast{top:calc(8px + env(safe-area-inset-top,0px))}
+  /* ajuda */
+  .help{left:0;right:0;bottom:calc(100% + 8px);transform:none;width:auto;box-sizing:border-box;max-height:calc(100dvh - 160px);overflow:auto;overscroll-behavior:contain}
+  .help dl{grid-template-columns:1fr;gap:0}
+  .help dt{margin-top:8px}
+  .help dt:first-child{margin-top:0}
+  #help-close{width:44px;height:44px}
+  /* modo andar */
+  .pad{right:calc(8px + env(safe-area-inset-right,0px));bottom:calc(72px + env(safe-area-inset-bottom,0px));grid-template-columns:52px;grid-template-rows:52px 52px;gap:6px;z-index:3}
+  .pad button{width:52px;height:52px}
+  .pad .left,.pad .right{display:none}
+  .pad .up{grid-column:1;grid-row:1}
+  .pad .down{grid-column:1;grid-row:2}
+  /* movel selecionado: folha inferior (64px recolhida, ate 360px aberta) */
+  .props{left:0;right:0;top:auto;bottom:var(--kb,0px);width:auto;max-height:none;box-sizing:border-box;height:calc(var(--sheet-h,64px) + env(safe-area-inset-bottom,0px));overflow:hidden;gap:0;padding:0 calc(8px + env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) calc(8px + env(safe-area-inset-left,0px));border-radius:16px 16px 0 0;z-index:5;display:flex;flex-direction:column;transition:height .22s cubic-bezier(.2,.8,.2,1)}
+  body.kb .props{transition:none}
+  .grip{height:12px;display:grid;place-items:center;touch-action:none;flex:none}
+  .grip i{width:36px;height:4px;border-radius:2px;background:var(--muted);opacity:.5}
+  .props-head{height:52px;gap:2px;flex:none}
+  .sel-h .desk-name{display:none}
+  .sel-name{display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;height:48px;justify-content:center;padding:0 8px;border-radius:10px;touch-action:none}
+  .sel-name b{font:600 1rem/1.2 "Barlow",system-ui,sans-serif}
+  #sel-dims{display:block}
+  .sel-name b,.sel-name small{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sel-name small{font-size:.74rem;color:var(--muted)}
+  .props-head .icon{width:44px;height:44px}
+  #p-rot90,#p-undo{display:grid}
+  .sheet-body{flex:1 1 0;min-height:0;overflow:auto;overscroll-behavior:contain;padding:4px 4px 12px;scroll-padding-top:48px}
+  .props:focus-within .seg{position:static}
+  .props[data-snap=peek] .sheet-body{visibility:hidden}
+  body.has-sel .dock,body.has-sel .decor,body.has-sel .pad{display:none!important}
+  .seg{display:flex;gap:4px;position:sticky;top:0;z-index:1;background:var(--panel);padding-bottom:4px}
+  .seg button{flex:1;min-height:36px;border:1px solid var(--line)}
+  .seg button[aria-selected=true]{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+  .tab{display:flex;flex-direction:column;gap:10px}
+  .tab:not(.on){display:none}
+  .optrow.m-only{display:flex}
+  .rotrow button{min-height:44px}
+  .f-rot{display:none!important}
+  .optrow button,.slots button{min-height:36px;padding:8px 12px}
+  .swatches{gap:8px}
+  .swatches button{width:36px;height:36px}
+  .row input[type=color]{width:44px;height:44px}
+  .chk{min-height:44px}
+  .chk input{width:22px;height:22px}
+  .props .actions{gap:12px}
+  .props .actions button{min-height:44px}
+  /* menos trabalho de GPU: sem desfoque atras dos paineis */
+  .bar,.menu,.toast,.decor-pill,.decor-list,.decor-state,.props,.help{-webkit-backdrop-filter:none;backdrop-filter:none}
+  :root{--panel:rgba(250,249,246,.97)}
+  :root[data-theme="dark"]{--panel:rgba(22,24,26,.96)}
 }
+@media (max-width:760px) and (prefers-color-scheme:dark), (pointer:coarse) and (max-height:500px) and (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--panel:rgba(22,24,26,.96)} }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--danger:#f2b8b5} }
+:root[data-theme="dark"]{--danger:#f2b8b5}
+@media (max-width:360px){ .bar .icon,.bar .edit-pill{width:46px} .bar .view-pill{padding:0 8px} .bar .view-pill .caret{display:none} }
+@media (max-width:760px), (pointer:coarse){ .fields input{font-size:16px;min-height:44px;padding:10px 8px;box-sizing:border-box} }
 </style>
 
 <style>
@@ -165,24 +263,39 @@ img{max-width:100%;}
     <div class="decor-state" id="decor-state" hidden></div>
     <div class="decor-list" id="decor-list" role="radiogroup" aria-label="Vers&#245;es de decora&#231;&#227;o" hidden></div>
   </div>
-  <aside class="props" id="props" hidden>
-    <div class="props-head"><h2 id="prop-name">M&#243;vel</h2><button class="icon" id="prop-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-    <div class="fields" id="prop-fields"></div>
-    <div class="rotrow">
+  <aside class="props" id="props" data-snap="peek" hidden>
+    <div class="grip" id="sheet-grip" aria-hidden="true"><i></i></div>
+    <div class="props-head">
+      <h2 class="sel-h"><span class="desk-name" id="prop-name">M&#243;vel</span><button class="sel-name" id="sel-more" aria-expanded="false" aria-controls="sheet-body"><b id="sel-name-m">M&#243;vel</b><small id="sel-dims"></small></button></h2>
+      <button class="icon" id="p-rot90" aria-label="Girar 90&#176;"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg></button>
+      <button class="icon" id="p-undo" aria-label="Desfazer" disabled><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>
+      <button class="icon" id="prop-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="sheet-body" id="sheet-body">
+      <div class="seg" role="tablist"><button role="tab" data-tab="medidas" aria-selected="true">Medidas</button><button role="tab" data-tab="cor" aria-selected="false">Cor</button><button role="tab" data-tab="opcoes" aria-selected="false">Op&#231;&#245;es</button></div>
+      <section class="tab on" data-tab="medidas">
+        <div class="fields" id="prop-fields"></div>
+        <div class="rotrow">
       <button data-rot="-90" title="Girar 90&#176; &#224; esquerda">&#10226; 90&#176;</button>
       <button data-rot="-15">&#8722;15&#176;</button>
       <span class="rotval" id="p-rotval">0&#176;</span>
       <button data-rot="15">+15&#176;</button>
       <button data-rot="90" title="Girar 90&#176; &#224; direita">&#10227; 90&#176;</button>
     </div>
-    <div id="p-options"></div>
-    <div class="slots" id="p-slots"></div>
-    <div class="swatches" id="p-swatches"></div>
-    <div class="row">
+      </section>
+      <section class="tab" data-tab="cor">
+        <div class="slots" id="p-slots"></div>
+        <div class="swatches" id="p-swatches"></div>
+        <div class="row">
       <label id="p-colorlabel">Cor<input type="color" id="p-color"></label>
       <label class="chk"><input type="checkbox" id="p-vis" checked> Mostrar</label>
     </div>
-    <div class="actions"><button id="p-dup">Duplicar</button><button id="p-del">Remover</button></div>
+      </section>
+      <section class="tab" data-tab="opcoes">
+        <div id="p-options"></div>
+        <div class="actions"><button id="p-dup">Duplicar</button><button id="p-del">Remover</button></div>
+      </section>
+    </div>
   </aside>
   <div class="pad" id="pad" hidden>
     <button class="up" data-k="fwd" aria-label="Andar para frente">&#9650;</button>
@@ -192,29 +305,31 @@ img{max-width:100%;}
   </div>
   <div class="dock">
     <div class="menu" id="view-list" role="radiogroup" aria-label="Pontos de vista" hidden></div>
+    <div class="menu more" id="more-list" role="menu" aria-label="Mais op&#231;&#245;es" hidden></div>
     <div class="bar">
       <button class="icon" id="view-prev" data-tip="Vista anterior (tecla [ )" aria-label="Vista anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="view-pill" id="view-btn" aria-expanded="false" aria-controls="view-list" data-tip="Escolher o ponto de vista"><span class="k">Vista</span><span class="nm" id="view-name">Vis&#227;o geral</span><span class="caret" aria-hidden="true">&#9660;</span></button>
       <button class="icon" id="view-next" data-tip="Pr&#243;xima vista (tecla ] )" aria-label="Pr&#243;xima vista"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
       <span class="sep"></span>
-      <button class="icon" id="t-teto" aria-pressed="false" data-tip="Mostrar o teto" aria-label="Mostrar teto"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 12v7h13v-7"/></svg></button>
-      <button class="icon" id="t-medidas" aria-pressed="false" data-tip="Mostrar as medidas" aria-label="Mostrar medidas"><svg viewBox="0 0 24 24"><rect x="2" y="8.5" width="20" height="7" rx="1.5"/><path d="M7 8.5v3M12 8.5v4M17 8.5v3"/></svg></button>
-      <button class="edit-pill" id="t-editar" aria-pressed="false" data-tip="Abaixa as paredes e mostra a sala de cima"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14.5 6.5 17.5 9.5"/></svg>Editar</button>
+      <button class="icon" id="t-teto" aria-pressed="false" data-tip="Mostrar o teto" aria-label="Mostrar teto"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 12v7h13v-7"/></svg><span class="lbl">Teto</span></button>
+      <button class="icon" id="t-medidas" aria-pressed="false" data-tip="Mostrar as medidas" aria-label="Mostrar medidas"><svg viewBox="0 0 24 24"><rect x="2" y="8.5" width="20" height="7" rx="1.5"/><path d="M7 8.5v3M12 8.5v4M17 8.5v3"/></svg><span class="lbl">Medidas</span></button>
+      <button class="edit-pill" id="t-editar" aria-pressed="false" data-tip="Abaixa as paredes e mostra a sala de cima"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14.5 6.5 17.5 9.5"/></svg><span class="lbl-e">Editar</span></button>
       <span class="sep"></span>
-      <button class="icon" id="t-undo" data-tip="Desfazer (Ctrl+Z)" aria-label="Desfazer" disabled><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>
-      <button class="icon" id="t-redo" data-tip="Refazer (Ctrl+Shift+Z)" aria-label="Refazer" disabled><svg viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/></svg></button>
-      <button class="icon" id="t-restaurar" data-tip="Voltar ao layout original desta vers&#227;o" aria-label="Restaurar layout"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
+      <button class="icon" id="t-undo" data-tip="Desfazer (Ctrl+Z)" aria-label="Desfazer" disabled><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg><span class="lbl">Desfazer</span></button>
+      <button class="icon" id="t-redo" data-tip="Refazer (Ctrl+Shift+Z)" aria-label="Refazer" disabled><svg viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/></svg><span class="lbl">Refazer</span></button>
+      <button class="icon" id="t-restaurar" data-tip="Voltar ao layout original desta vers&#227;o" aria-label="Restaurar layout"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span class="lbl">Restaurar</span></button>
       <span class="sep"></span>
-      <button class="icon" id="t-paredes" aria-pressed="false" data-tip="Paredes: inteiras" aria-label="Altura das paredes"><svg viewBox="0 0 24 24"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 14h18"/></svg></button>
-      <button class="icon" id="t-mover" aria-pressed="false" data-tip="Arrastar m&#243;veis (desligue para travar)" aria-label="Arrastar m&#243;veis"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3l-2.5 2.5M12 3l2.5 2.5M12 21l-2.5-2.5M12 21l2.5-2.5M3 12l2.5-2.5M3 12l2.5 2.5M21 12l-2.5-2.5M21 12l-2.5 2.5"/></svg></button>
-      <button class="icon" id="t-noite" aria-pressed="false" data-tip="Luz da noite" aria-label="Luz noturna"><svg viewBox="0 0 24 24"><path d="M20 14.6A8 8 0 0 1 9.4 4 8 8 0 1 0 20 14.6Z"/></svg></button>
+      <button class="icon" id="t-paredes" aria-pressed="false" data-tip="Paredes: inteiras" aria-label="Altura das paredes"><svg viewBox="0 0 24 24"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 14h18"/></svg><span class="lbl">Paredes</span></button>
+      <button class="icon" id="t-mover" aria-pressed="false" data-tip="Arrastar m&#243;veis (desligue para travar)" aria-label="Arrastar m&#243;veis"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3l-2.5 2.5M12 3l2.5 2.5M12 21l-2.5-2.5M12 21l2.5-2.5M3 12l2.5-2.5M3 12l2.5 2.5M21 12l-2.5-2.5M21 12l-2.5 2.5"/></svg><span class="lbl">Mover</span></button>
+      <button class="icon" id="t-noite" aria-pressed="false" data-tip="Luz da noite" aria-label="Luz noturna"><svg viewBox="0 0 24 24"><path d="M20 14.6A8 8 0 0 1 9.4 4 8 8 0 1 0 20 14.6Z"/></svg><span class="lbl">Noite</span></button>
       <span class="sep"></span>
-      <button class="icon" id="t-ajuda" data-tip="Como usar" aria-label="Como usar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.4 2.5c-.6.2-.9.8-.9 1.4v.4"/><path d="M12 17.2v.2"/></svg></button>
+      <button class="icon" id="t-ajuda" data-tip="Como usar" aria-label="Como usar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 1 1 3.4 2.5c-.6.2-.9.8-.9 1.4v.4"/><path d="M12 17.2v.2"/></svg><span class="lbl">Ajuda</span></button>
+      <button class="icon" id="t-mais" aria-expanded="false" aria-controls="more-list" aria-label="Mais op&#231;&#245;es"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg><span class="lbl">Mais</span></button>
     </div>
     <div class="help" id="help" hidden>
       <button class="icon close" id="help-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       <h3>Como usar</h3>
-      <dl>
+      <dl class="help-desk">
         <dt>Girar a cena</dt><dd>Arraste no vazio, use as setas, ou segure Espa&#231;o (ou Alt) e mexa o mouse</dd>
         <dt>Trocar de vista</dt><dd>Setas da barra, ou teclas [ e ]</dd>
         <dt>Aproximar</dt><dd>Role o mouse, pince na tela, ou teclas + e &#8722;</dd>
@@ -226,6 +341,7 @@ img{max-width:100%;}
         <dt>Apagar</dt><dd>Delete &#183; Esc desmarca</dd>
         <dt>Entrar na sala</dt><dd>Dois cliques no ch&#227;o</dd>
       </dl>
+      <dl class="help-touch"><dt>Girar a cena</dt><dd>Arraste com 1 dedo</dd><dt>Aproximar</dt><dd>Pin&#231;a com 2 dedos</dd><dt>Deslocar</dt><dd>Arraste com 2 dedos</dd><dt>Selecionar m&#243;vel</dt><dd>Toque nele</dd><dt>Mover m&#243;vel</dt><dd>Com ele selecionado, arraste a partir dele</dd><dt>Medidas, cor e op&#231;&#245;es</dt><dd>Toque no nome do m&#243;vel, embaixo</dd><dt>Desmarcar</dt><dd>Toque no vazio ou no X</dd><dt>Entrar na sala</dt><dd>Toque duplo no ch&#227;o</dd><dt>Editar</dt><dd>Planta vista de cima, com paredes baixas</dd><dt>Mais</dt><dd>Teto, paredes, noite, travar m&#243;veis, refazer, restaurar</dd></dl>
     </div>
   </div>
 </div>
@@ -241,11 +357,17 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 
 const canvas = document.getElementById('c');
 const coarse = matchMedia('(pointer: coarse)').matches;
+const mobileUI = matchMedia('(max-width: 760px), (pointer: coarse) and (max-height: 500px)');
+const MOBILE = coarse && Math.min(screen.width, screen.height) < 820;
 let renderer;
 try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); }
 catch (e) { document.getElementById('app').insertAdjacentHTML('beforeend','<div class="err">Seu navegador n\u00e3o conseguiu abrir o 3D (WebGL desativado). Tente no Chrome ou Safari atualizados.</div>'); throw e; }
-const PR = Math.min(devicePixelRatio, 2);
+const PR = Math.min(devicePixelRatio, MOBILE ? 1.5 : 2);
 renderer.setPixelRatio(PR);
+canvas.addEventListener('webglcontextlost', e => {
+  e.preventDefault(); renderer.setAnimationLoop(null);
+  document.getElementById('app').insertAdjacentHTML('beforeend', '<div class="err"><button onclick="location.reload()">O 3D foi pausado pelo sistema. Toque para recarregar</button></div>');
+});
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -264,13 +386,14 @@ const FX = o => { o.traverse(c => c.layers.set(1)); return o; };
 
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+controls.addEventListener('start', () => { focusTween = null; });
 controls.maxPolarAngle = Math.PI / 2.05;
 controls.minDistance = 2; controls.maxDistance = 26;
 
 // ---------- procedural textures ----------
 let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const maxAniso = renderer.capabilities.getMaxAnisotropy();
-function tex(c, srgb = true){ const t = new THREE.CanvasTexture(c); if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = maxAniso; return t; }
+function tex(c, srgb = true){ const t = new THREE.CanvasTexture(c); if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = MOBILE ? Math.min(maxAniso, 4) : maxAniso; return t; }
 function canvas2d(w, h = w){ const c = document.createElement('canvas'); c.width = w; c.height = h; return [c, c.getContext('2d')]; }
 
 function woodTexture(){ // 1.2 m square, 12 cm planks along x
@@ -389,7 +512,7 @@ function floor(x1,x2,z1,z2,baseTex,size,mat){
   const m = new THREE.Mesh(new THREE.PlaneGeometry(x2-x1, z2-z1), mat);
   m.rotation.x = -Math.PI/2; m.position.set((x1+x2)/2, 0, (z1+z2)/2); m.receiveShadow = true; scene.add(m); floorMeshes.push(m); return m;
 }
-const woodMat = () => { const m = new THREE.MeshPhysicalMaterial({ roughness: .5, clearcoat: .35, clearcoatRoughness: .3, envMapIntensity: .45 }); allMats.push(m); return m; };
+const woodMat = () => { const m = MOBILE ? new THREE.MeshStandardMaterial({ roughness: .42, envMapIntensity: .45 }) : new THREE.MeshPhysicalMaterial({ roughness: .5, clearcoat: .35, clearcoatRoughness: .3, envMapIntensity: .45 }); allMats.push(m); return m; };
 const ceilings = [];
 function C(x1,x2,y,z1,z2){ const m = B(x1,x2,y,y+0.05,z1,z2,M.ceil); ceilings.push(m); return m; }
 const plate = (axis, face, dir, a, y) => box3(axis, dir > 0 ? face : face - 0.012, dir > 0 ? face + 0.012 : face, y - 0.05, y + 0.05, a - 0.04, a + 0.04, M.plate);
@@ -604,7 +727,7 @@ const ceilFix = [B(1.28, 1.32, H-0.035, H, 0.6, 4.4, M.frame)];
 const spots = [], kLights = [];
 [1.2, 2.4, 3.6].forEach(z => {
   const s = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.14, 16), M.frame); s.position.set(1.30, H-0.12, z); s.rotation.x = 0.5; scene.add(s); ceilFix.push(s);
-  const L = new THREE.SpotLight(0xffd6a0, 0, 7, 0.8, 0.6, 1.6); L.position.set(1.30, H-0.18, z); L.target.position.set(1.1, 0, z + 0.2); scene.add(L, L.target); spots.push(L);
+  const L = new THREE.SpotLight(0xffd6a0, 0, 7, 0.8, 0.6, 1.6); L.position.set(1.30, H-0.18, z); L.target.position.set(1.1, 0, z + 0.2); L.visible = false; scene.add(L, L.target); spots.push(L);
 });
 [[-3.0, 2.6], [-3.0, 0.6], [-3.0, -1.4]].forEach(([x, z]) => {
   const d = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.01, 20), M.lamp); d.position.set(x, HK-0.006, z); scene.add(d); ceilFix.push(d);
@@ -1113,16 +1236,23 @@ const LAYOUT_REV = 2;
 function saveLayout(){ try { localStorage.setItem('ape3d-layout-' + DECOR[decorIndex].id, JSON.stringify({ rev: LAYOUT_REV, items: items.map(stripItem) })); } catch (e) {} }
 let undoStack = [], redoStack = [], undoBtn = null, redoBtn = null;
 const snapJSON = () => JSON.stringify(items.map(stripItem));
-function updateHistoryBtns(){ if (undoBtn){ undoBtn.disabled = !undoStack.length; redoBtn.disabled = !redoStack.length; } }
-function snapshot(){ undoStack.push(snapJSON()); if (undoStack.length > 80) undoStack.shift(); redoStack.length = 0; updateHistoryBtns(); }
+function updateHistoryBtns(){ if (undoBtn){ undoBtn.disabled = !undoStack.length; redoBtn.disabled = !redoStack.length; } const pu = document.getElementById('p-undo'); if (pu) pu.disabled = !undoStack.length; }
+function dropActionTip(){ if (hint.classList.contains('act')){ clearTimeout(tipTimer); hint.classList.add('hide'); hint.classList.remove('act'); } }
+function snapshot(){ dropActionTip(); undoStack.push(snapJSON()); if (undoStack.length > 80) undoStack.shift(); redoStack.length = 0; updateHistoryBtns(); }
 function applyState(json){
+  const uid = selected ? selected.uid : null;
   items = JSON.parse(json); mountItems(); refreshMeta();
-  const keep = selected && items.find(it => it.type === selected.type && Math.abs(it.x - selected.x) < 0.01 && Math.abs(it.z - selected.z) < 0.01);
-  select(keep || null); saveLayout(); updateHistoryBtns();
+  select(uid != null ? items.find(i => i.uid === uid) || null : null); saveLayout(); updateHistoryBtns();
 }
 function undo(){ if (!undoStack.length) return; redoStack.push(snapJSON()); applyState(undoStack.pop()); showTip('Desfeito.'); }
 function redo(){ if (!redoStack.length) return; undoStack.push(snapJSON()); applyState(redoStack.pop()); showTip('Refeito.'); }
+let uidSeq = 0;
+function assignUids(){
+  items.forEach(it => { if (typeof it.uid === 'number') uidSeq = Math.max(uidSeq, it.uid); });
+  items.forEach(it => { if (typeof it.uid !== 'number') it.uid = ++uidSeq; });
+}
 function mountItems(){
+  assignUids();
   decorGroup.children.slice().forEach(o => { decorGroup.remove(o); clearGroup(o); });
   itemTags.forEach(t => { t.el.remove(); tags.splice(tags.indexOf(t), 1); }); itemTags.length = 0;
   items.forEach(it => { buildItem(it); it._tag = tag(itemLabel(it), [0, 0, 0], 'item'); itemTags.push(it._tag); });
@@ -1158,6 +1288,7 @@ function buildItem(it){
 function rebuildItem(it){
   if (it._obj){ decorGroup.remove(it._obj); clearGroup(it._obj); }
   buildItem(it); if (it._tag) it._tag.el.textContent = itemLabel(it);
+  if (selected === it) selDimsEl.textContent = itemLabel(it).slice((NAMES[it.type] || it.type).length).trim();
   refreshMeta(); if (selected === it){ updateSelDims(); updateSelPad(); }
 }
 const _b = new THREE.Box3();
@@ -1217,36 +1348,127 @@ function updateSelPad(){
   selPad.position.set((b.min.x + b.max.x)/2, 0.016, (b.min.z + b.max.z)/2); selPad.visible = true;
 }
 function select(it){
+  const was = selected;
   selected = it || null;
   if (selected && selected._obj && selected.visible !== false){ selBox.setFromObject(selected._obj); selBox.visible = true; }
   else selBox.visible = false;
   updateSelPad();
   props.hidden = !selected;
-  if (selected) fillProps();
+  document.body.classList.toggle('has-sel', !!selected);
+  if (selected){ fillProps(); if (!was) setSheet('peek'); }
   updateSelDims();
+  frameSelection();
 }
 // ---------- properties panel ----------
 const props = document.getElementById('props'), propName = document.getElementById('prop-name'), propFields = document.getElementById('prop-fields');
 const pColor = document.getElementById('p-color'), pVis = document.getElementById('p-vis');
+const selMore = document.getElementById('sel-more'), selDimsEl = document.getElementById('sel-dims'), sheetGrip = document.getElementById('sheet-grip');
+const pUndo = document.getElementById('p-undo');
+let kbOpen = false;
+function sheetOpenPx(){
+  const vh = window.visualViewport ? visualViewport.height : innerHeight;
+  if (kbOpen) return Math.round(Math.min(360, vh - 8));
+  return Math.round(Math.min(360, vh * (vh < 500 ? .8 : .45)));
+}
+function setSheet(state){
+  props.dataset.snap = state;
+  document.documentElement.style.setProperty('--sheet-h', (state === 'open' ? sheetOpenPx() : 64) + 'px');
+  selMore.setAttribute('aria-expanded', String(state === 'open'));
+  setTimeout(frameSelection, 240);
+}
+// camera: keep the selected piece in the free band above the sheet
+let offY = 0, offYGoal = 0, focusTween = null;
+function frameSelection(){
+  if (drag3) return;
+  if (!selected || !mobileUI.matches || props.hidden){ offYGoal = 0; return; }
+  const w = canvas.clientWidth, h = canvas.clientHeight, top = 8, bot = props.getBoundingClientRect().top - 8;
+  offYGoal = Math.max(0, Math.round(h / 2 - (top + bot) / 2));
+  if (mode !== 'orbit' || !selected._obj || selected.visible === false) return;
+  const b = itemBox(selected), v = new THREE.Vector3();
+  let y0 = 1e9, y1 = -1e9, x0 = 1e9, x1 = -1e9;
+  for (const x of [b.min.x, b.max.x]) for (const y of [b.min.y, b.max.y]) for (const z of [b.min.z, b.max.z]){
+    v.set(x, y, z).project(camera);
+    const sy = (-v.y * .5 + .5) * h + offY - offYGoal, sx = (v.x * .5 + .5) * w;
+    y0 = Math.min(y0, sy); y1 = Math.max(y1, sy); x0 = Math.min(x0, sx); x1 = Math.max(x1, sx);
+  }
+  if (y0 < top || y1 > bot || x0 < 8 || x1 > w - 8){
+    const c = b.getCenter(new THREE.Vector3()); c.y = Math.min(c.y, 1);
+    c.x = Math.min(TARGET_BOUNDS.x[1], Math.max(TARGET_BOUNDS.x[0], c.x)); c.z = Math.min(TARGET_BOUNDS.z[1], Math.max(TARGET_BOUNDS.z[0], c.z));
+    focusTween = { t: 0, from: controls.target.clone(), to: c, dolly: (y1 - y0) > (bot - top) * .8 ? 1.25 : 0 };
+  }
+}
+function applyOffset(){
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  if (!offY) camera.clearViewOffset(); else camera.setViewOffset(w, h, 0, offY, w, h);
+}
+// sheet gestures: tap the name to open/close, swipe up/down on the name or the grip
+let sheetSwipe = null, swiped = false;
+[selMore, sheetGrip].forEach(el => {
+  el.addEventListener('pointerdown', e => { if (!mobileUI.matches) return; sheetSwipe = { y: e.clientY, id: e.pointerId }; try { el.setPointerCapture(e.pointerId); } catch (err) {} });
+  el.addEventListener('pointerup', e => {
+    if (!sheetSwipe || sheetSwipe.id !== e.pointerId) return;
+    const dy = e.clientY - sheetSwipe.y; sheetSwipe = null;
+    if (Math.abs(dy) < 40) return;
+    swiped = true; setTimeout(() => { swiped = false; }, 350);
+    if (dy < 0) setSheet('open');
+    else if (props.dataset.snap === 'open') setSheet('peek');
+    else select(null);
+  });
+  el.addEventListener('pointercancel', () => { sheetSwipe = null; });
+  el.addEventListener('click', () => { if (!mobileUI.matches || swiped) return; setSheet(props.dataset.snap === 'open' ? 'peek' : 'open'); });
+});
+props.addEventListener('transitionend', e => { if (e.propertyName === 'height') frameSelection(); });
+props.addEventListener('focusin', e => { if (mobileUI.matches && e.target.matches('input')) setSheet('open'); });
+let lastKb = 0;
+if (window.visualViewport) visualViewport.addEventListener('resize', () => {
+  const kb = Math.max(0, Math.round(innerHeight - visualViewport.height - visualViewport.offsetTop));
+  const prev = lastKb; lastKb = kb; kbOpen = kb > 80;
+  document.documentElement.style.setProperty('--kb', kb + 'px');
+  document.body.classList.toggle('kb', kbOpen);
+  const a = document.activeElement;
+  if (kbOpen && a && a.closest && a.closest('#props')){ setSheet('open'); setTimeout(() => a.scrollIntoView({ block: 'nearest' }), 60); }
+  else if (kb !== prev && selected && props.dataset.snap === 'open') setSheet('open');
+});
+// tabs inside the sheet (phone only; desktop shows everything)
+function setTab(t){
+  props.querySelectorAll('.seg [data-tab]').forEach(x => x.setAttribute('aria-selected', String(x.dataset.tab === t)));
+  props.querySelectorAll('section.tab').forEach(sec => sec.classList.toggle('on', sec.dataset.tab === t));
+  try { localStorage.setItem('ape3d-tab', t); } catch (e) {}
+}
+props.querySelectorAll('.seg [data-tab]').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
+try { const t0 = localStorage.getItem('ape3d-tab'); if (t0) setTab(t0); } catch (e) {}
+document.getElementById('p-rot90').addEventListener('click', () => rotateSel(90));
+pUndo.addEventListener('click', () => undo());
+const numParse = str => parseFloat(String(str).trim().replace(',', '.'));
+const numIn = (k, v, step) => coarse
+  ? `<input type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" data-k="${k}" value="${k === 'rot' ? Math.round(+v) : fmt(+v)}">`
+  : `<input type="number" step="${step}" data-k="${k}" value="${k === 'rot' ? (+v) : (+v).toFixed(2)}">`;
 function fillProps(){
-  const it = selected; propName.textContent = NAMES[it.type] || it.type;
+  const it = selected; propName.textContent = NAMES[it.type] || it.type; document.getElementById('sel-name-m').textContent = propName.textContent;
+  selDimsEl.textContent = itemLabel(it).slice((NAMES[it.type] || it.type).length).trim();
   const keys = Object.keys(FIELD_LABELS).filter(k => it[k] != null);
-  propFields.innerHTML = keys.map(k => `<label>${FIELD_LABELS[k]}<input type="number" step="0.01" data-k="${k}" value="${(+it[k]).toFixed(2)}"></label>`).join('')
-    + `<label>Rota\u00e7\u00e3o \u00b0<input type="number" step="5" data-k="rot" value="${it.rot || 0}"></label>`
-    + `<label>Posi\u00e7\u00e3o X<input type="number" step="0.05" data-k="x" value="${it.x.toFixed(2)}"></label>`
-    + `<label>Posi\u00e7\u00e3o Z<input type="number" step="0.05" data-k="z" value="${it.z.toFixed(2)}"></label>`
-    + (it.y != null ? `<label>Altura do ch\u00e3o<input type="number" step="0.05" data-k="y" value="${(+it.y).toFixed(2)}"></label>` : '');
+  propFields.innerHTML = keys.map(k => `<label>${FIELD_LABELS[k]}${numIn(k, it[k], 0.01)}</label>`).join('')
+    + `<label class="f-rot">Rota\u00e7\u00e3o \u00b0${numIn('rot', it.rot || 0, 5)}</label>`
+    + `<label>Posi\u00e7\u00e3o X${numIn('x', it.x, 0.05)}</label>`
+    + `<label>Posi\u00e7\u00e3o Z${numIn('z', it.z, 0.05)}</label>`
+    + (it.y != null ? `<label>Altura do ch\u00e3o${numIn('y', it.y, 0.05)}</label>` : '');
   propFields.querySelectorAll('input').forEach(inp => inp.addEventListener('change', () => {
-    const k = inp.dataset.k, v = parseFloat(inp.value); if (!isFinite(v)) return;
+    const k = inp.dataset.k, v = numParse(inp.value); if (!isFinite(v)) return;
     snapshot(); selected[k] = v; rebuildItem(selected); selBox.setFromObject(selected._obj); saveLayout();
   }));
   const optBox = document.getElementById('p-options');
   const opts = OPTION_FIELDS[it.type] || [];
   optBox.innerHTML = opts.map(f => `<div class="optrow"><span class="lb">${f.label}</span>` +
     f.options.map(([v, lab]) => `<button data-fk="${f.key}" data-fv="${v}" aria-pressed="${(it[f.key] || f.def) === v}">${lab}</button>`).join('') + '</div>').join('');
-  optBox.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+  optBox.querySelectorAll('button[data-fk]').forEach(b => b.addEventListener('click', () => {
     snapshot(); selected[b.dataset.fk] = b.dataset.fv; rebuildItem(selected); saveLayout(); fillProps();
   }));
+  const st = DECOR[decorIndex].states;
+  if (st && it.type === 'retractable'){
+    optBox.insertAdjacentHTML('afterbegin', st.map(sd => `<div class="optrow m-only"><span class="lb">${sd.label}</span>` +
+      sd.options.map(([val, lab]) => `<button data-sk="${sd.key}" data-sv="${val}" aria-pressed="${decorState[sd.key] === val}">${lab}</button>`).join('') + '</div>').join(''));
+    optBox.querySelectorAll('[data-sk]').forEach(b => b.addEventListener('click', () => setDecorState(b.dataset.sk, b.dataset.sv)));
+  }
   const slots = slotsFor(it), box = document.getElementById('p-slots');
   activeSlot = slots.length ? slots[0] : null;
   box.hidden = slots.length < 2;
@@ -1264,7 +1486,7 @@ function fillProps(){
 }
 function syncFields(){
   if (!selected) return;
-  propFields.querySelectorAll('input').forEach(inp => { const v = selected[inp.dataset.k]; if (v != null) inp.value = (+v).toFixed(2); });
+  propFields.querySelectorAll('input').forEach(inp => { const v = selected[inp.dataset.k]; if (v != null) inp.value = coarse ? (inp.dataset.k === 'rot' ? Math.round(+v) : fmt(+v)) : (+v).toFixed(2); });
 }
 const SWATCHES = ['#efece4', '#e6ddcd', '#c99c68', '#8a5a33', '#6b2233', '#c7713f', '#d9a54c', '#3f5d4a', '#22406c', '#5a7896', '#9aa0a6', '#26282b'];
 document.getElementById('p-swatches').innerHTML = SWATCHES.map(c => `<button data-c="${c}" style="background:${c}" aria-label="Cor ${c}"></button>`).join('');
@@ -1291,7 +1513,7 @@ pColor.addEventListener('change', () => setSlotColor(pColor.value));
 pVis.addEventListener('change', () => { if (!selected) return; snapshot(); selected.visible = pVis.checked; selected._obj.visible = pVis.checked; refreshMeta(); select(selected); saveLayout(); });
 document.getElementById('prop-close').addEventListener('click', () => select(null));
 document.getElementById('p-dup').addEventListener('click', () => {
-  if (!selected) return; snapshot(); const copy = stripItem(selected); copy.x += 0.3; copy.z += 0.3;
+  if (!selected) return; snapshot(); const copy = stripItem(selected); copy.x += 0.3; copy.z += 0.3; copy.uid = ++uidSeq;
   items.push(copy); buildItem(copy); copy._tag = tag(itemLabel(copy), [0, 0, 0], 'item'); itemTags.push(copy._tag);
   refreshMeta(); select(copy); saveLayout();
 });
@@ -1300,15 +1522,13 @@ document.getElementById('p-del').addEventListener('click', () => {
   decorGroup.remove(it._obj); clearGroup(it._obj);
   if (it._tag){ it._tag.el.remove(); tags.splice(tags.indexOf(it._tag), 1); itemTags.splice(itemTags.indexOf(it._tag), 1); }
   items.splice(items.indexOf(it), 1); select(null); refreshMeta(); saveLayout();
+  const mark = undoStack[undoStack.length - 1];
+  showTip((NAMES[it.type] || 'M\u00f3vel') + ' removido.', { action: { label: 'Desfazer', run: () => { if (undoStack[undoStack.length - 1] === mark) undo(); } } });
 });
 // ---------- versions ----------
-function applyDecor(i){
-  decorIndex = (i + DECOR.length) % DECOR.length; const v = DECOR[decorIndex];
-  select(null);
-  clearGroup(decorGroup); clearGroup(decorDims); decorObstacles.length = 0;
+function rebuildGuides(v){
+  clearGroup(decorDims);
   decorTags.forEach(t => { t.el.remove(); tags.splice(tags.indexOf(t), 1); }); decorTags = [];
-  items = loadLayout(v); undoStack = []; redoStack = []; updateHistoryBtns();
-  mountItems();
   v.guides.filter(gd => !gd.when || Object.values(decorState).includes(gd.when)).forEach(gd => {
     const A = new THREE.Vector3(...gd.a), Bv = new THREE.Vector3(...gd.b), len = A.distanceTo(Bv);
     const line = new THREE.Mesh(new THREE.CylinderGeometry(0.005, 0.005, len, 8), guideMat);
@@ -1316,13 +1536,31 @@ function applyDecor(i){
     decorDims.add(line); [A, Bv].forEach(pt => { const dd = new THREE.Mesh(dotGeo, guideMat); dd.position.copy(pt); decorDims.add(dd); });
     decorTags.push(tag(`${gd.label} ${fmt(len)} m`, line.position.toArray(), 'guide'));
   });
-  FX(decorDims); refreshMeta();
+  FX(decorDims);
+}
+function setDecorState(k, val){
+  decorState[k] = val;
+  rebuildGuides(DECOR[decorIndex]);
+  items.filter(i => i.type === 'retractable').forEach(i => rebuildItem(i));
+  refreshMeta();
+  document.querySelectorAll('#decor-state [data-k]').forEach(b => b.setAttribute('aria-pressed', String(decorState[b.dataset.k] === b.dataset.v)));
+  if (selected){ selBox.setFromObject(selected._obj); updateSelDims(); fillProps(); }
+}
+function applyDecor(i){
+  decorIndex = (i + DECOR.length) % DECOR.length; const v = DECOR[decorIndex];
+  select(null);
+  clearGroup(decorGroup); clearGroup(decorDims); decorObstacles.length = 0;
+  decorTags.forEach(t => { t.el.remove(); tags.splice(tags.indexOf(t), 1); }); decorTags = [];
+  items = loadLayout(v); undoStack = []; redoStack = []; updateHistoryBtns();
+  mountItems();
+  rebuildGuides(v);
+  refreshMeta();
   decorName.textContent = v.name;
   const st = document.getElementById('decor-state');
   st.hidden = !v.states;
   if (v.states){
     st.innerHTML = v.states.map(sd => `<span class="lab">${sd.label}</span>` + sd.options.map(([val, lab]) => `<button id="st-${sd.key}-${val}" data-tip="${sd.label}: ${lab.toLowerCase()}" data-k="${sd.key}" data-v="${val}" aria-pressed="${decorState[sd.key] === val}">${lab}</button>`).join('')).join('');
-    st.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { decorState[b.dataset.k] = b.dataset.v; applyDecor(decorIndex); }));
+    st.querySelectorAll('button').forEach(b => b.addEventListener('click', () => setDecorState(b.dataset.k, b.dataset.v)));
   }
   decorList.querySelectorAll('.decor-opt').forEach((b, k) => b.setAttribute('aria-checked', String(k === decorIndex)));
   try { localStorage.setItem('ape3d-decor-v2', v.id); } catch (e) {}
@@ -1415,7 +1653,7 @@ document.getElementById('t-restaurar').addEventListener('click', () => {
   try { localStorage.removeItem('ape3d-layout-' + DECOR[decorIndex].id); } catch (e) {}
   const keep = undoStack.slice(), keepR = redoStack.slice();
   applyDecor(decorIndex); undoStack = keep; redoStack = keepR; updateHistoryBtns();
-  showTip('Layout original restaurado. Ctrl+Z traz suas mudan\u00e7as de volta.');
+  showTip(TIPS.restored);
 });
 const helpBox = document.getElementById('help');
 document.getElementById('t-ajuda').addEventListener('click', () => { helpBox.hidden = !helpBox.hidden; });
@@ -1443,19 +1681,26 @@ function setWalls(m){
   ARCH.forEach(mat => { const want = h === null ? null : [clipPlane]; if ((mat.clippingPlanes ? 1 : 0) !== (want ? 1 : 0)) mat.needsUpdate = true; mat.clippingPlanes = want; mat.clipShadows = true; });
   paredesBtn.setAttribute('aria-pressed', String(wallMode > 0));
   paredesBtn.dataset.tip = WALL_MODES[wallMode][0] + ' (clique para trocar)';
+  paredesBtn.querySelector('.lbl').textContent = ['Paredes', 'Paredes baixas', 'Sem paredes'][wallMode];
 }
 paredesBtn.addEventListener('click', () => { setWalls(wallMode + 1); showTip(WALL_MODES[wallMode][0] + '.'); });
 // edit mode: top view, low walls, grid and dragging on \u2014 one click puts everything back
 const editBtn = document.getElementById('t-editar');
 let editing = false, prevView = 'geral';
+function leaveEdit(){
+  if (!editing) return;
+  editing = false; editBtn.setAttribute('aria-pressed', 'false');
+  editBtn.querySelector('.lbl-e').textContent = 'Editar'; grid.visible = false;
+}
 function setEdit(on){
   editing = on; editBtn.setAttribute('aria-pressed', String(on));
+  editBtn.querySelector('.lbl-e').textContent = on && mobileUI.matches ? 'Pronto' : 'Editar';
   if (on){
     prevView = currentView || 'geral';
     setWalls(1); grid.visible = true;
     moveMode = true; moverBtn.setAttribute('aria-pressed', 'true');
     goTo('planta');
-    showTip('Modo editar: arraste os m\u00f3veis, gire com Q e E, mova com as setas. Clique em Editar de novo para repor as paredes.');
+    showTip(TIPS.edit);
   } else {
     setWalls(0); grid.visible = false;
     goTo(prevView === 'planta' ? 'geral' : prevView);
@@ -1471,29 +1716,57 @@ function pickItem(e){
   const hit = ray.intersectObjects(decorGroup.children, true)[0];
   return hit ? { it: hit.object.userData.item, point: hit.point } : null;
 }
+// Mouse: press on a piece and drag it straight away.
+// Touch: one finger always orbits; only the piece that is already selected can be dragged (after 8px);
+// a second finger cancels the drag and becomes a pinch.
+const touchIds = new Set(); let multiTouch = false, tapChanged = false;
+const isTouch = e => e.pointerType === 'touch';
+function beginDrag(e, hit){
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  if (!ray.ray.intersectPlane(floorPlane, hitPt)) return false;
+  focusTween = null; offYGoal = offY;
+  drag3 = { id: e.pointerId, touch: isTouch(e), it: hit.it, dx: hit.it.x - hitPt.x, dz: hit.it.z - hitPt.z,
+            x0: hit.it.x, z0: hit.it.z, sx: e.clientX, sy: e.clientY, before: snapJSON(), moved: false };
+  return true;
+}
 function startDrag(e){
   if (mode === 'walk' || !moveMode || e.button > 0) return false;
   const hit = pickItem(e); if (!hit || !hit.it) return false;
   select(hit.it);
-  ray.setFromCamera(ndc, camera);
-  if (!ray.ray.intersectPlane(floorPlane, hitPt)) return false;
-  snapshot();
-  drag3 = { it: hit.it, dx: hit.it.x - hitPt.x, dz: hit.it.z - hitPt.z, moved: false };
+  if (!beginDrag(e, hit)) return false;
   controls.enabled = false; canvas.style.cursor = 'grabbing';
   try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
   return true;
 }
-// runs before OrbitControls, so grabbing a piece never turns into a camera orbit
+function cancelDrag(){
+  if (!drag3) return;
+  const d = drag3; drag3 = null;
+  if (d.moved){ d.it.x = d.x0; d.it.z = d.z0; d.it._obj.position.set(d.x0, d.it.y ?? 0, d.z0); refreshMeta(); selBox.setFromObject(d.it._obj); updateSelDims(); }
+  controls.enabled = mode === 'orbit'; controls.enableRotate = true; downAt = null;
+  frameSelection();
+}
 canvas.addEventListener('pointerdown', e => {
-  if (startDrag(e)){ e.stopPropagation(); e.preventDefault(); }
+  if (!isTouch(e)){ multiTouch = false; if (startDrag(e)){ e.stopPropagation(); e.preventDefault(); } return; }
+  touchIds.add(e.pointerId);
+  multiTouch = touchIds.size > 1 ? true : false;
+  if (drag3 && e.pointerId !== drag3.id){ cancelDrag(); return; }
+  if (multiTouch || mode !== 'orbit' || !moveMode || !selected) return;
+  const hit = pickItem(e);
+  if (hit && hit.it === selected && beginDrag(e, hit)) controls.enableRotate = false;
 }, true);
 canvas.addEventListener('pointermove', e => {
-  if (drag3){ moveDrag(e); e.stopPropagation(); return; }
-  if (mode === 'walk' || !moveMode || performance.now() - hoverAt < 90) return;
+  if (drag3 && e.pointerId === drag3.id){ moveDrag(e); return; }
+  if (isTouch(e) || mode === 'walk' || !moveMode || performance.now() - hoverAt < 90) return;
   hoverAt = performance.now();
   const hit = pickItem(e); canvas.style.cursor = hit && hit.it ? 'grab' : '';
 }, true);
-canvas.addEventListener('pointerup', e => { if (drag3){ endDrag(); e.stopPropagation(); } }, true);
+['pointerup', 'pointercancel', 'lostpointercapture'].forEach(t => canvas.addEventListener(t, e => {
+  if (t !== 'lostpointercapture') touchIds.delete(e.pointerId);
+  if (!drag3 || e.pointerId !== drag3.id) return;
+  if (t === 'pointerup') endDrag(); else cancelDrag();
+}, true));
 // nudge the selected piece with the arrow keys
 addEventListener('keydown', e => {
   if (!selected || mode === 'walk' || (e.target.closest && e.target.closest('input,textarea,select'))) return;
@@ -1509,19 +1782,34 @@ addEventListener('keydown', e => {
   refreshMeta(); selBox.setFromObject(selected._obj); updateSelDims(); syncFields(); saveLayout();
 }, true);
 function moveDrag(e){
-  if (!drag3) return;
-  drag3.moved = true;
+  if (!drag3 || e.pointerId !== drag3.id) return;
+  if (!drag3.moved){
+    if (Math.hypot(e.clientX - drag3.sx, e.clientY - drag3.sy) < (drag3.touch ? 8 : 3)) return;
+    drag3.moved = true;
+    if (drag3.touch && mobileUI.matches && props.dataset.snap !== 'peek') setSheet('peek');
+  }
   const r = canvas.getBoundingClientRect();
   ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   ray.setFromCamera(ndc, camera);
   if (!ray.ray.intersectPlane(floorPlane, hitPt)) return;
   const snap = v => e.shiftKey ? v : Math.round(v / 0.05) * 0.05;
   const it = drag3.it;
-  it.x = snap(hitPt.x + drag3.dx); it.z = snap(hitPt.z + drag3.dz);
+  it.x = +(drag3.x0 + snap(hitPt.x + drag3.dx - drag3.x0)).toFixed(3);
+  it.z = +(drag3.z0 + snap(hitPt.z + drag3.dz - drag3.z0)).toFixed(3);
   it._obj.position.set(it.x, it.y ?? 0, it.z);
-  refreshMeta(); selBox.setFromObject(it._obj); updateSelDims(); syncFields();
+  refreshMeta(); selBox.setFromObject(it._obj); updateSelDims();
 }
-function endDrag(){ if (!drag3) return; drag3 = null; controls.enabled = mode === 'orbit'; canvas.style.cursor = moveMode ? 'grab' : ''; saveLayout(); }
+function endDrag(){
+  if (!drag3) return;
+  const d = drag3; drag3 = null;
+  controls.enabled = mode === 'orbit'; controls.enableRotate = true;
+  canvas.style.cursor = moveMode && !d.touch ? 'grab' : '';
+  frameSelection();
+  if (!d.moved) return;
+  dropActionTip();
+  undoStack.push(d.before); if (undoStack.length > 80) undoStack.shift(); redoStack.length = 0; updateHistoryBtns();
+  syncFields(); saveLayout(); downAt = null;
+}
 
 { let saved = null; try { saved = localStorage.getItem('ape3d-decor-v2'); } catch (e) {}
   const k = DECOR.findIndex(v => v.id === saved); applyDecor(k >= 0 ? k : DECOR.findIndex(v => v.id === 'ref-azul')); }
@@ -1611,7 +1899,29 @@ const VIEWS = {
 };
 let mode = 'orbit', yaw = 0, pitch = 0, tween = null, showCeil = false;
 let tipTimer;
-function showTip(text){ hint.textContent = text; hint.classList.remove('hide'); clearTimeout(tipTimer); tipTimer = setTimeout(() => hint.classList.add('hide'), 5000); }
+const TIPS = coarse ? {
+  orbit: 'Arraste para girar \u00b7 pin\u00e7a para aproximar \u00b7 toque num m\u00f3vel para ajustar',
+  walk: 'Arraste para olhar \u00b7 toque duplo no ch\u00e3o para ir',
+  edit: 'Toque num m\u00f3vel e arraste o selecionado para mover',
+  restored: 'Layout original restaurado. Toque em Desfazer para voltar.',
+} : {
+  orbit: 'Arraste para girar \u00b7 role para aproximar \u00b7 dois cliques no ch\u00e3o para entrar',
+  walk: 'Arraste para olhar \u00b7 W A S D ou setas para andar \u00b7 dois cliques no ch\u00e3o para ir at\u00e9 l\u00e1',
+  edit: 'Modo editar: arraste os m\u00f3veis, gire com Q e E, mova com as setas. Clique em Editar de novo para repor as paredes.',
+  restored: 'Layout original restaurado. Ctrl+Z traz suas mudan\u00e7as de volta.',
+};
+function showTip(text, o = {}){
+  if (o.once){ try { if (localStorage.getItem('ape3d-tip-' + o.once)) return; localStorage.setItem('ape3d-tip-' + o.once, '1'); } catch (e) {} }
+  hint.replaceChildren(text);
+  hint.classList.toggle('act', !!o.action);
+  if (o.action){
+    const b = document.createElement('button'); b.textContent = o.action.label;
+    b.onclick = () => { clearTimeout(tipTimer); hint.classList.add('hide'); hint.classList.remove('act'); o.action.run(); };
+    hint.append(b);
+  }
+  hint.classList.remove('hide'); clearTimeout(tipTimer);
+  tipTimer = setTimeout(() => { hint.classList.add('hide'); hint.classList.remove('act'); }, o.action ? 6000 : (coarse ? 3500 : 5000));
+}
 const hint = document.getElementById('hint'), pad = document.getElementById('pad'), tetoBtn = document.getElementById('t-teto');
 
 function setCeil(show){
@@ -1630,7 +1940,8 @@ function flyTo(v, instant){
   const endPos = new THREE.Vector3(...v.pos), look = new THREE.Vector3(...v.look);
   const dummy = new THREE.PerspectiveCamera(); dummy.position.copy(endPos); dummy.lookAt(look);
   const endQ = dummy.quaternion.clone();
-  controls.enabled = false; mode = 'tween';
+  controls.enabled = false; mode = 'tween'; focusTween = null;
+  if (!v.orbit) leaveEdit();
   roomsVisible = !!v.orbit; setCeil(!v.orbit);
   setWalls(v.orbit ? 1 : 0);
   camera.fov = v.fov || (v.orbit ? 50 : 68); camera.updateProjectionMatrix();
@@ -1638,9 +1949,8 @@ function flyTo(v, instant){
     if (v.orbit){ mode = 'orbit'; controls.target.copy(look); controls.enabled = true; controls.update(); }
     else { mode = 'walk'; const d = look.clone().sub(endPos); yaw = Math.atan2(-d.x, -d.z); pitch = Math.atan2(d.y, Math.hypot(d.x, d.z)); }
     pad.hidden = mode !== 'walk';
-    showTip(mode === 'walk'
-      ? 'Arraste para olhar \u00b7 W A S D ou setas para andar \u00b7 dois cliques no ch\u00e3o para ir at\u00e9 l\u00e1'
-      : 'Arraste para girar \u00b7 role para aproximar \u00b7 dois cliques no ch\u00e3o para entrar');
+    if (mode === 'walk' && coarse) select(null);
+    showTip(TIPS[mode], coarse ? { once: 'nav-' + mode } : {});
   };
   if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches){ camera.position.copy(endPos); camera.quaternion.copy(endQ); done(); return; }
   tween = { t: 0, dur: 1.1, p0: camera.position.clone(), q0: camera.quaternion.clone(), p1: endPos, q1: endQ, done };
@@ -1649,7 +1959,21 @@ const VIEW_LABELS = { geral: 'Vis\u00e3o geral', planta: 'Planta', sala: 'S\u00f
 const viewBtn = document.getElementById('view-btn'), viewList = document.getElementById('view-list'), viewName = document.getElementById('view-name');
 viewList.innerHTML = Object.entries(VIEW_LABELS).map(([k, lab]) => `<button id="v-${k}" data-v="${k}" role="radio" aria-checked="false">${lab}</button>`).join('');
 viewList.querySelectorAll('[data-v]').forEach(b => b.addEventListener('click', () => { goTo(b.dataset.v); toggleViews(false); }));
-function toggleViews(open){ viewList.hidden = !open; viewBtn.setAttribute('aria-expanded', String(open)); }
+function toggleViews(open){ viewList.hidden = !open; viewBtn.setAttribute('aria-expanded', String(open)); if (open) toggleMore(false); }
+const moreList = document.getElementById('more-list'), moreBtn = document.getElementById('t-mais');
+function toggleMore(open){ moreList.hidden = !open; moreBtn.setAttribute('aria-expanded', String(open)); if (open){ viewList.hidden = true; viewBtn.setAttribute('aria-expanded', 'false'); } }
+const MORE = ['t-teto', 't-paredes', 't-noite', 't-mover', 't-redo', 't-restaurar', 't-ajuda'].map(id => {
+  const el = document.getElementById(id), ph = document.createComment(id); el.before(ph); return [el, ph];
+});
+function placeMore(){ MORE.forEach(([el, ph]) => { if (mobileUI.matches) moreList.append(el); else ph.after(el); }); if (!mobileUI.matches) toggleMore(false); }
+mobileUI.addEventListener('change', () => { placeMore(); placeOptions(); editBtn.querySelector('.lbl-e').textContent = editing && mobileUI.matches ? 'Pronto' : 'Editar'; frameSelection(); });
+placeMore();
+const pOpt = document.getElementById('p-options'), pOptHome = document.createComment('p-options');
+pOpt.before(pOptHome);
+function placeOptions(){ if (mobileUI.matches) pOptHome.after(pOpt); else document.getElementById('p-slots').before(pOpt); }
+placeOptions();
+moreBtn.addEventListener('click', () => toggleMore(moreList.hidden));
+['t-restaurar', 't-ajuda'].forEach(id => document.getElementById(id).addEventListener('click', () => toggleMore(false)));
 viewBtn.addEventListener('click', () => toggleViews(viewList.hidden));
 const VIEW_ORDER = Object.keys(VIEW_LABELS);
 function cycleView(step){
@@ -1663,7 +1987,7 @@ addEventListener('keydown', e => {
   if (e.key === '[') cycleView(-1);
   if (e.key === ']') cycleView(1);
 });
-addEventListener('pointerdown', e => { if (!e.target.closest || !e.target.closest('.dock')) toggleViews(false); });
+addEventListener('pointerdown', e => { if (!e.target.closest || !e.target.closest('.dock')){ toggleViews(false); toggleMore(false); } });
 tetoBtn.addEventListener('click', () => setCeil(!showCeil));
 const medBtn = document.getElementById('t-medidas'), noiteBtn = document.getElementById('t-noite');
 medBtn.addEventListener('click', () => { dims.visible = !dims.visible; medBtn.setAttribute('aria-pressed', String(dims.visible)); });
@@ -1672,7 +1996,7 @@ function setNight(on){
   night = on; noiteBtn.setAttribute('aria-pressed', String(on));
   sun.intensity = on ? 0 : 3.4; hemi.intensity = on ? 0.02 : 0.2; bounce.intensity = on ? 0 : 0.7;
   allMats.forEach(m => m.envMapIntensity = on ? 0.06 : 0.45);
-  spots.forEach(l => l.intensity = on ? 14 : 0);
+  spots.forEach(l => { l.visible = on; l.intensity = on ? 14 : 0; });
   kLights.forEach(l => l.intensity = on ? 5 : 2);
   nicheLight.intensity = on ? 1.2 : 0.25;
   renderer.toneMappingExposure = on ? 1.2 : 0.95;
@@ -1687,25 +2011,34 @@ addEventListener('keydown', e => { if (mode === 'walk' && /^(KeyW|KeyA|KeyS|KeyD
 addEventListener('keyup', e => keys.delete(e.code));
 let downAt = null, lastTap = 0, lastXY = [0, 0];
 canvas.addEventListener('pointerdown', e => {
-  downAt = [e.clientX, e.clientY];
-  if (startDrag(e)) return;
-  if (mode !== 'walk') return; drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId);
+  if (e.isPrimary) downAt = [e.clientX, e.clientY];
+  if (drag3) return;
+  if (mode !== 'walk' || (drag && !e.isPrimary)) return;
+  drag = { id: e.pointerId, x: e.clientX, y: e.clientY };
+  try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
 });
 canvas.addEventListener('pointermove', e => {
-  if (drag3){ moveDrag(e); return; }
-  if (!drag || mode !== 'walk') return;
+  if (drag3) return;
+  if (!drag || e.pointerId !== drag.id || mode !== 'walk') return;
   yaw += (e.clientX - drag.x) * 0.004; pitch += (e.clientY - drag.y) * 0.004;
-  pitch = Math.max(-1.2, Math.min(1.2, pitch)); drag = { x: e.clientX, y: e.clientY };
+  pitch = Math.max(-1.2, Math.min(1.2, pitch)); drag.x = e.clientX; drag.y = e.clientY;
 });
 canvas.addEventListener('pointerup', e => {
-  if (drag3){ endDrag(); downAt = null; return; }
-  drag = null; if (!downAt) return;
+  if (drag && drag.id === e.pointerId) drag = null;
+  if (!e.isPrimary || (isTouch(e) && multiTouch) || !downAt){ downAt = null; return; }
   const moved = Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]); downAt = null;
   if (moved > 8) return;
-  const now = performance.now();
-  if (now - lastTap < 380 && Math.hypot(e.clientX - lastXY[0], e.clientY - lastXY[1]) < 30){ lastTap = 0; teleport(e); }
-  else { lastTap = now; lastXY = [e.clientX, e.clientY]; const hit = pickItem(e); if (hit && hit.it) select(hit.it); }
+  const now = performance.now(), touch = isTouch(e);
+  const dbl = now - lastTap < 380 && Math.hypot(e.clientX - lastXY[0], e.clientY - lastXY[1]) < 30;
+  if (dbl && !(touch && mode !== 'walk' && (editing || tapChanged))){ lastTap = 0; teleport(e); return; }
+  lastTap = now; lastXY = [e.clientX, e.clientY];
+  if (touch && mode === 'walk'){ tapChanged = false; return; }
+  const hit = pickItem(e), selBefore = selected, snapBefore = props.dataset.snap;
+  if (hit && hit.it) select(hit.it);
+  else if (touch && selected){ if (mobileUI.matches && props.dataset.snap === 'open') setSheet('peek'); else select(null); }
+  tapChanged = selected !== selBefore || props.dataset.snap !== snapBefore;
 });
+['pointercancel', 'lostpointercapture'].forEach(t => canvas.addEventListener(t, e => { if (drag && drag.id === e.pointerId) drag = null; if (t === 'pointercancel') downAt = null; }));
 canvas.addEventListener('wheel', e => { if (mode === 'walk'){ step(-e.deltaY * 0.002, 0); e.preventDefault(); } }, { passive: false });
 const padHeld = new Set();
 pad.querySelectorAll('button').forEach(b => {
@@ -1740,10 +2073,26 @@ function resize(){
   const w = canvas.clientWidth, h = canvas.clientHeight;
   renderer.setSize(w, h, false);
   camera.aspect = w / h; camera.updateProjectionMatrix();
+  applyOffset();
+  if (selected && props.dataset.snap === 'open') setSheet('open');
 }
 addEventListener('resize', resize); resize();
 goTo('geral', true);
 document.getElementById('loading').remove();
+if (new URLSearchParams(location.search).has('debug')) window.__ape = {
+  renderer, camera, controls,
+  get items(){ return items; }, get selected(){ return selected; }, get undoLen(){ return undoStack.length; }, get mode(){ return mode; },
+  select, setSheet,
+  screenBox(it){
+    const b = itemBox(it), v = new THREE.Vector3(), w = canvas.clientWidth, h = canvas.clientHeight;
+    const r = { top: 1e9, bottom: -1e9, left: 1e9, right: -1e9 };
+    for (const x of [b.min.x, b.max.x]) for (const y of [b.min.y, b.max.y]) for (const z of [b.min.z, b.max.z]){
+      v.set(x, y, z).project(camera); const sx = (v.x * .5 + .5) * w, sy = (-v.y * .5 + .5) * h;
+      r.top = Math.min(r.top, sy); r.bottom = Math.max(r.bottom, sy); r.left = Math.min(r.left, sx); r.right = Math.max(r.right, sx);
+    }
+    return r;
+  },
+};
 
 const clock = new THREE.Clock();
 renderer.setAnimationLoop(() => {
@@ -1763,6 +2112,15 @@ renderer.setAnimationLoop(() => {
     camera.position.y = 1.6;
     camera.rotation.set(pitch, yaw, 0, 'YXZ');
   } else { clampTarget(); controls.update(); }
+  if (Math.abs(offYGoal - offY) > .5){ offY += (offYGoal - offY) * Math.min(1, dt * 10); if (Math.abs(offYGoal - offY) <= .5) offY = offYGoal; applyOffset(); }
+  else if (offY !== offYGoal){ offY = offYGoal; applyOffset(); }
+  if (focusTween && mode === 'orbit'){
+    focusTween.t = Math.min(1, focusTween.t + dt / .45);
+    const k = 1 - Math.pow(1 - focusTween.t, 3);
+    const d = focusTween.from.clone().lerp(focusTween.to, k).sub(controls.target);
+    controls.target.add(d); camera.position.add(d);
+    if (focusTween.t >= 1){ if (focusTween.dolly) dollyBy(focusTween.dolly); focusTween = null; }
+  }
   renderer.render(scene, camera);
   updateTags();
 });
